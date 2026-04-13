@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "title": "Isabela Rodríguez Rocha | IRR",
+    "description": "Recent Computing graduate building digital experiences through intentional code and curated architecture."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+    "hireMe": "Hire Me"
+  },
+  "hero": {
+    "tagline": "Software Development",
+    "description": "Recent Computing graduate passionate about building clean, purposeful software. Turning ideas into real products.",
+    "viewWork": "View My Work",
+    "readCV": "Read CV",
+    "stat1Value": "2025",
+    "stat1Label": "UCR Graduate",
+    "stat2Value": "02",
+    "stat2Label": "Live Projects",
+    "stat3Value": "10+",
+    "stat3Label": "Technologies",
+    "location": "Location",
+    "locationValue": "Heredia, CR / Remote",
+    "systemOnline": "System Online",
+    "portraitAlt": "Portrait of Isabela Rodríguez Rocha"
+  },
+  "about": {
+    "subtitle": "Software Developer // 2026",
+    "description": "Recent graduate eager to grow in the software industry. Focused on building practical, well-crafted applications with modern tools.",
+    "academicTitle": "Academic",
+    "academicTitle2": "Foundation",
+    "academicDescription": "My work is grounded in formal computational theory and system engineering principles learned at one of Central America's top universities.",
+    "degreeTitle": "B.Sc. in Computing",
+    "university": "University of Costa Rica",
+    "degreeYear": "2025",
+    "degreeDescription": "Specialized in software development, covering algorithmic efficiency, software architecture, and user-centric design. Completed research in integrated software systems and cloud infrastructure.",
+    "status": "Status",
+    "statusValue": "Graduated",
+    "focus": "Focus",
+    "focusValue": "Software Development",
+    "portraitAlt": "Isabela Rodríguez Rocha"
+  },
+  "experience": {
+    "sectionTitle": "Professional Experience",
+    "sectionSubtitle": "Chronological Order",
+    "items": [
+      {
+        "title": "Supervised Professional Practice",
+        "company": "UCR - Aldeas SOS",
+        "description": "Collaborated with a team to build internal software tools for a non-profit organization, improving data management and streamlining daily operations. Gained hands-on experience in full-stack development, agile workflows, and delivering solutions aligned with real user needs."
+      },
+      {
+        "title": "Computer Technician",
+        "company": "Independent Consultancy",
+        "description": "Provided technical support to individuals and small businesses, handling hardware repairs, software installations, and network setup. Developed strong diagnostic skills and the ability to explain technical concepts in accessible language."
+      },
+      {
+        "title": "CAD Designer",
+        "company": "Align Technology",
+        "description": "Designed personalized dental treatment plans using specialized CAD software, crafting precise 3D models to guide orthodontic care. Strengthened my attention to detail, spatial reasoning, and ability to deliver high-quality work within tight deadlines."
+      }
+    ],
+    "projectsTitle": "Featured Projects",
+    "projectsSubtitle": "Live & Deployed",
+    "projects": [
+      {
+        "title": "IsaStore CR",
+        "description": "A fully deployed e-commerce web application built with modern web technologies.",
+        "url": "https://isastorecr.vercel.app"
+      },
+      {
+        "title": "Maquiz CR",
+        "description": "An interactive web application deployed on Vercel with a focus on user experience.",
+        "url": "https://maquizcr.vercel.app"
+      }
+    ],
+    "visitProject": "Visit Project",
+    "curatorToolkit": "Core Competencies",
+    "technologicalArsenal": "Professional Skill Set",
+    "development": "Development",
+    "developmentDesc": "Building server-side logic and interactive front-end environments with modern frameworks.",
+    "design": "Design",
+    "designDesc": "From technical drafting to modern interface aesthetics with precision geometry.",
+    "hardware": "Hardware",
+    "hardwareDesc": "Ensuring the physical infrastructure sustains the digital vision reliably."
+  },
+  "skills": {
+    "capabilitiesTag": "Capabilities Matrix // v2.0",
+    "title": "Technical",
+    "titleHighlight": "Skills.",
+    "subtitle": "Building scalable applications and leveraging intelligent tools within the digital void.",
+    "devEcosystem": "Development Ecosystem",
+    "aiIntelligence": "AI & Intelligence",
+    "softSkills": "Soft Skills",
+    "softSkillsList": [
+      "Teamwork",
+      "Problem Solving",
+      "Communication",
+      "Adaptability",
+      "Time Management",
+      "Attention to Detail",
+      "Continuous Learning"
+    ],
+    "techSupport": "Technical Support",
+    "techSupportDesc": "Hands-on experience diagnosing and resolving hardware and software issues. Skilled in system maintenance, network setup, and technical problem-solving to keep operations running smoothly.",
+    "systems": "Systems",
+    "hardwareArch": "Hardware Arch.",
+    "scope": "Scope",
+    "softwareDebugging": "Software Debugging",
+    "languages": "Languages",
+    "spanish": "Spanish",
+    "nativeProficiency": "Native Proficiency",
+    "english": "English",
+    "intermediateB2": "Intermediate B2+"
+  },
+  "contact": {
+    "heading": "Let's start a",
+    "headingHighlight": "conversation.",
+    "portfolioIdentity": "Portfolio Identity",
+    "role": "Software Developer",
+    "electronicMail": "Electronic Mail",
+    "directLine": "Direct Line",
+    "basedIn": "Based In",
+    "locationValue": "Heredia, Costa Rica",
+    "fullName": "Full Name",
+    "namePlaceholder": "Your Name",
+    "emailAddress": "Email Address",
+    "emailPlaceholder": "email@example.com",
+    "yourMessage": "Your Message",
+    "messagePlaceholder": "Describe your vision...",
+    "sendMessage": "Send Message",
+    "disclaimer": "By clicking send, you acknowledge that your data will be handled with absolute digital integrity.",
+    "designPhilosophy": "Design Philosophy",
+    "quote": "The detail is not the detail. It is the design.",
+    "mapAlt": "Location: Heredia, Costa Rica"
+  },
+  "footer": {
+    "copyright": "© 2026 IRR."
+  }
+}

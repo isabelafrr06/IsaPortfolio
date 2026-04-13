@@ -1,0 +1,143 @@
+{
+  "metadata": {
+    "title": "Isabela Rodríguez Rocha | IRR",
+    "description": "Graduada reciente en Computación construyendo experiencias digitales con código intencional y arquitectura curada."
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "contact": "Contacto",
+    "hireMe": "Contrátame"
+  },
+  "hero": {
+    "tagline": "Desarrollo de Software",
+    "description": "Graduada reciente en Computación apasionada por construir software limpio y con propósito. Convirtiendo ideas en productos reales.",
+    "viewWork": "Ver Mi Trabajo",
+    "readCV": "Leer CV",
+    "stat1Value": "2025",
+    "stat1Label": "Graduada UCR",
+    "stat2Value": "02",
+    "stat2Label": "Proyectos en Línea",
+    "stat3Value": "10+",
+    "stat3Label": "Tecnologías",
+    "location": "Ubicación",
+    "locationValue": "Heredia, CR / Remoto",
+    "systemOnline": "Sistema En Línea",
+    "portraitAlt": "Retrato de Isabela Rodríguez Rocha"
+  },
+  "about": {
+    "subtitle": "Desarrolladora de Software // 2026",
+    "description": "Graduada reciente con ganas de crecer en la industria del software. Enfocada en construir aplicaciones prácticas y bien diseñadas con herramientas modernas.",
+    "academicTitle": "Formación",
+    "academicTitle2": "Académica",
+    "academicDescription": "Mi trabajo está fundamentado en la teoría computacional formal y los principios de ingeniería de sistemas aprendidos en una de las mejores universidades de Centroamérica.",
+    "degreeTitle": "Bach. en Computación",
+    "university": "Universidad de Costa Rica",
+    "degreeYear": "2025",
+    "degreeDescription": "Especializada en desarrollo de software, abarcando eficiencia algorítmica, arquitectura de software y diseño centrado en el usuario. Completé investigación en sistemas de software integrados e infraestructura en la nube.",
+    "status": "Estado",
+    "statusValue": "Graduada",
+    "focus": "Enfoque",
+    "focusValue": "Desarrollo de Software",
+    "portraitAlt": "Isabela Rodríguez Rocha"
+  },
+  "experience": {
+    "sectionTitle": "Experiencia Profesional",
+    "sectionSubtitle": "Orden Cronológico",
+    "items": [
+      {
+        "title": "Práctica Profesional Supervisada",
+        "company": "UCR - Aldeas SOS",
+        "description": "Colaboré con un equipo para construir herramientas de software internas para una organización sin fines de lucro, mejorando la gestión de datos y optimizando las operaciones diarias. Adquirí experiencia práctica en desarrollo full-stack, metodologías ágiles y entrega de soluciones alineadas con las necesidades reales del usuario."
+      },
+      {
+        "title": "Técnica en Computación",
+        "company": "Consultoría Independiente",
+        "description": "Brindé soporte técnico a personas y pequeñas empresas, gestionando reparaciones de hardware, instalación de software y configuración de redes. Desarrollé sólidas habilidades de diagnóstico y la capacidad de explicar conceptos técnicos en un lenguaje accesible."
+      },
+      {
+        "title": "Diseñadora CAD",
+        "company": "Align Technology",
+        "description": "Diseñé planes de tratamiento dental personalizados utilizando software CAD especializado, creando modelos 3D precisos para guiar el cuidado ortodóntico. Fortalecí mi atención al detalle, razonamiento espacial y capacidad de entregar trabajo de alta calidad en plazos ajustados."
+      }
+    ],
+    "projectsTitle": "Proyectos Destacados",
+    "projectsSubtitle": "En Línea y Desplegados",
+    "projects": [
+      {
+        "title": "IsaStore CR",
+        "description": "Una aplicación web de comercio electrónico completamente desplegada, construida con tecnologías web modernas.",
+        "url": "https://isastorecr.vercel.app"
+      },
+      {
+        "title": "Maquiz CR",
+        "description": "Una aplicación web interactiva desplegada en Vercel con enfoque en la experiencia de usuario.",
+        "url": "https://maquizcr.vercel.app"
+      }
+    ],
+    "visitProject": "Visitar Proyecto",
+    "curatorToolkit": "Competencias Clave",
+    "technologicalArsenal": "Conjunto de Habilidades Profesionales",
+    "development": "Desarrollo",
+    "developmentDesc": "Construyendo lógica del lado del servidor y entornos interactivos de front-end con frameworks modernos.",
+    "design": "Diseño",
+    "designDesc": "Del dibujo técnico a la estética de interfaces modernas con geometría de precisión.",
+    "hardware": "Hardware",
+    "hardwareDesc": "Asegurando que la infraestructura física sostenga la visión digital de manera confiable."
+  },
+  "skills": {
+    "capabilitiesTag": "Matriz de Capacidades // v2.0",
+    "title": "Habilidades",
+    "titleHighlight": "Técnicas.",
+    "subtitle": "Construyendo aplicaciones escalables y aprovechando herramientas inteligentes dentro del vacío digital.",
+    "devEcosystem": "Ecosistema de Desarrollo",
+    "aiIntelligence": "IA e Inteligencia",
+    "softSkills": "Habilidades Blandas",
+    "softSkillsList": [
+      "Trabajo en Equipo",
+      "Resolución de Problemas",
+      "Comunicación",
+      "Adaptabilidad",
+      "Gestión del Tiempo",
+      "Atención al Detalle",
+      "Aprendizaje Continuo"
+    ],
+    "techSupport": "Soporte Técnico",
+    "techSupportDesc": "Experiencia práctica diagnosticando y resolviendo problemas de hardware y software. Habilidad en mantenimiento de sistemas, configuración de redes y resolución de problemas técnicos para mantener las operaciones funcionando sin interrupciones.",
+    "systems": "Sistemas",
+    "hardwareArch": "Arq. Hardware",
+    "scope": "Alcance",
+    "softwareDebugging": "Depuración de Software",
+    "languages": "Idiomas",
+    "spanish": "Español",
+    "nativeProficiency": "Competencia Nativa",
+    "english": "Inglés",
+    "intermediateB2": "Intermedio B2+"
+  },
+  "contact": {
+    "heading": "Iniciemos una",
+    "headingHighlight": "conversación.",
+    "portfolioIdentity": "Identidad del Portafolio",
+    "role": "Desarrolladora de Software",
+    "electronicMail": "Correo Electrónico",
+    "directLine": "Línea Directa",
+    "basedIn": "Ubicación",
+    "locationValue": "Heredia, Costa Rica",
+    "fullName": "Nombre Completo",
+    "namePlaceholder": "Tu Nombre",
+    "emailAddress": "Correo Electrónico",
+    "emailPlaceholder": "correo@ejemplo.com",
+    "yourMessage": "Tu Mensaje",
+    "messagePlaceholder": "Describe tu visión...",
+    "sendMessage": "Enviar Mensaje",
+    "disclaimer": "Al hacer clic en enviar, reconoces que tus datos serán manejados con absoluta integridad digital.",
+    "designPhilosophy": "Filosofía de Diseño",
+    "quote": "El detalle no es el detalle. Es el diseño.",
+    "mapAlt": "Ubicación: Heredia, Costa Rica"
+  },
+  "footer": {
+    "copyright": "© 2026 IRR."
+  }
+}
