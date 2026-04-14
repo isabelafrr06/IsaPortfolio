@@ -3,7 +3,7 @@ import type { Dictionary } from "@/app/[lang]/dictionaries";
 type FooterDict = Dictionary["footer"];
 
 const footerLinks = [
-  { label: "LinkedIn", href: "www.linkedin.com/in/isabelafrr06" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/isabelafrr06" },
   { label: "GitHub", href: "https://github.com/isabelafrr06" },
   { label: "Email", href: "mailto:isabelafrr06@gmail.com" },
 ];
