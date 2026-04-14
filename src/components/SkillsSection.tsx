@@ -21,8 +21,9 @@ const techStack = [
 ];
 
 const aiTools = [
-  "Claude",
-  "ChatGPT-4",
+  "Claude Code",
+  "ChatGPT",
+  "Cursor",  
   "GitHub Copilot",
   "Prompt Engineering",
   "AI Automation",
