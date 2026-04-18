@@ -22,6 +22,10 @@
 
 # misc
 .DS_Store
+
+# Local AI assistant hints (keep locally, do not commit)
+AGENTS.md
+CLAUDE.md
 *.pem
 
 # debug
