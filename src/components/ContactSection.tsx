@@ -8,7 +8,7 @@ export default function ContactSection({ dict }: { dict: ContactDict }) {
     <section id="contact" className="pt-18 pb-24 px-8 max-w-[1440px] mx-auto">
       {/* Header */}
       <header className="mb-24">
-        <h2 className="text-6xl font-[family-name:var(--font-headline)] font-extrabold tracking-tighter leading-none text-white">
+        <h2 className="text-6xl font-extrabold font-[family-name:var(--font-headline)] tracking-tighter leading-[0.9] text-on-surface">
           {dict.heading} <br />
           <span className="text-primary italic">{dict.headingHighlight}</span>
         </h2>

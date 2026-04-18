@@ -112,7 +112,7 @@ export default function HeroSection({
       <section id="about" className="py-20 scroll-mt-24">
         <div className="max-w-[1440px] mx-auto px-8">
           <div className="mb-20">
-            <h2 className="text-5xl font-[family-name:var(--font-headline)] font-extrabold tracking-tighter text-on-surface text-center mb-4">
+            <h2 className="text-6xl font-extrabold font-[family-name:var(--font-headline)] tracking-tighter leading-[0.9] text-on-surface">
               {aboutDict.academicTitle} {aboutDict.academicTitle2}
             </h2>
           </div>

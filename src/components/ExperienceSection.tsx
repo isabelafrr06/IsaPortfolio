@@ -13,7 +13,7 @@ export default function ExperienceSection({ dict }: { dict: ExpDict }) {
     <section id="experience" className="py-2">
       <div className="max-w-[1440px] mx-auto px-8">
         <div className="mb-20">
-          <h2 className="text-5xl font-[family-name:var(--font-headline)] font-extrabold tracking-tighter text-on-surface text-center mb-4">
+          <h2 className="text-6xl font-extrabold font-[family-name:var(--font-headline)] tracking-tighter leading-[0.9] text-on-surface">
             {dict.sectionTitle}
           </h2>
         </div>
@@ -59,7 +59,7 @@ export default function ExperienceSection({ dict }: { dict: ExpDict }) {
       <div id="projects" className="max-w-[1440px] mx-auto px-8 my-12 scroll-mt-32">
         <div className="flex justify-between items-end mb-16">
           <div>
-            <h2 className="text-4xl font-[family-name:var(--font-headline)] font-bold tracking-tighter mb-2">
+            <h2 className="text-6xl font-extrabold font-[family-name:var(--font-headline)] tracking-tighter leading-[0.9] text-on-surface mb-2">
               {dict.projectsTitle}
             </h2>
             <p className="text-tertiary font-mono text-xs uppercase tracking-widest">
