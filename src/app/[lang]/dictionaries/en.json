@@ -107,7 +107,15 @@
     "emailPlaceholder": "email@example.com",
     "yourMessage": "Your Message",
     "messagePlaceholder": "Describe your vision...",
+    "nameRequired": "Name is required.",
+    "emailRequired": "Email is required.",
+    "emailInvalid": "Please enter a valid email address.",
+    "messageRequired": "Message is required.",
+    "messageTooShort": "Message must be at least 10 characters.",
     "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "successMessage": "Message sent. I'll be in touch soon.",
+    "errorMessage": "Something went wrong. Please try again.",
     "disclaimer": "By clicking send, you acknowledge that your data will be handled with absolute digital integrity."
   },
   "footer": {

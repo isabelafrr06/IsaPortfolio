@@ -1,9 +1,48 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 
 type ContactDict = Dictionary["contact"];
+type FieldErrors = { name?: string; email?: string; message?: string };
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactSection({ dict }: { dict: ContactDict }) {
+  const [state, handleSubmit] = useForm("xrejbyag");
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+
+  function validate(name: string, email: string, message: string): FieldErrors {
+    const errors: FieldErrors = {};
+    if (!name.trim()) errors.name = dict.nameRequired;
+    if (!email.trim()) errors.email = dict.emailRequired;
+    else if (!EMAIL_REGEX.test(email)) errors.email = dict.emailInvalid;
+    if (!message.trim()) errors.message = dict.messageRequired;
+    else if (message.trim().length < 10) errors.message = dict.messageTooShort;
+    return errors;
+  }
+
+  function clearError(field: keyof FieldErrors) {
+    setFieldErrors((prev) => ({ ...prev, [field]: undefined }));
+  }
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const errors = validate(
+      data.get("name") as string,
+      data.get("email") as string,
+      data.get("message") as string
+    );
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
+    setFieldErrors({});
+    await handleSubmit(e);
+  }
+
   return (
     <section id="contact" className="pt-18 pb-24 px-8 max-w-[1440px] mx-auto">
       {/* Header */}
@@ -94,53 +133,78 @@ export default function ContactSection({ dict }: { dict: ContactDict }) {
 
         {/* Right: Contact Form */}
         <div className="lg:col-span-7">
-          <form className="space-y-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <form onSubmit={onSubmit} className="space-y-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className="relative group">
+                  <label className="block text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4 font-[family-name:var(--font-headline)] transition-colors group-focus-within:text-primary">
+                    {dict.fullName}
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder={dict.namePlaceholder}
+                    onChange={() => clearError("name")}
+                    className={`w-full bg-transparent border-0 border-b py-4 px-0 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-b-2 ${fieldErrors.name ? "border-red-400 focus:border-red-400" : "border-outline-variant focus:border-primary"}`}
+                  />
+                  {fieldErrors.name && <span className="text-xs text-red-400 mt-2 block">{fieldErrors.name}</span>}
+                  <ValidationError field="name" errors={state.errors} className="text-xs text-red-400 mt-2 block" />
+                </div>
+                <div className="relative group">
+                  <label className="block text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4 font-[family-name:var(--font-headline)] transition-colors group-focus-within:text-primary">
+                    {dict.emailAddress}
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder={dict.emailPlaceholder}
+                    onChange={() => clearError("email")}
+                    className={`w-full bg-transparent border-0 border-b py-4 px-0 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-b-2 ${fieldErrors.email ? "border-red-400 focus:border-red-400" : "border-outline-variant focus:border-primary"}`}
+                  />
+                  {fieldErrors.email && <span className="text-xs text-red-400 mt-2 block">{fieldErrors.email}</span>}
+                  <ValidationError field="email" errors={state.errors} className="text-xs text-red-400 mt-2 block" />
+                </div>
+              </div>
+
               <div className="relative group">
                 <label className="block text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4 font-[family-name:var(--font-headline)] transition-colors group-focus-within:text-primary">
-                  {dict.fullName}
+                  {dict.yourMessage}
                 </label>
-                <input
-                  type="text"
-                  placeholder={dict.namePlaceholder}
-                  className="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-b-2 focus:border-primary"
+                <textarea
+                  name="message"
+                  placeholder={dict.messagePlaceholder}
+                  rows={4}
+                  onChange={() => clearError("message")}
+                  className={`w-full bg-transparent border-0 border-b py-4 px-0 text-xl text-white placeholder:text-white/20 resize-none focus:outline-none focus:border-b-2 ${fieldErrors.message ? "border-red-400 focus:border-red-400" : "border-outline-variant focus:border-primary"}`}
                 />
+                {fieldErrors.message && <span className="text-xs text-red-400 mt-2 block">{fieldErrors.message}</span>}
+                <ValidationError field="message" errors={state.errors} className="text-xs text-red-400 mt-2 block" />
               </div>
-              <div className="relative group">
-                <label className="block text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4 font-[family-name:var(--font-headline)] transition-colors group-focus-within:text-primary">
-                  {dict.emailAddress}
-                </label>
-                <input
-                  type="email"
-                  placeholder={dict.emailPlaceholder}
-                  className="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 text-xl text-white placeholder:text-white/20 focus:outline-none focus:border-b-2 focus:border-primary"
-                />
+
+              <div className="flex flex-col md:flex-row items-center gap-12 pt-2">
+                {!state.succeeded && (
+                  <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="w-full md:w-auto px-12 py-4 neon-gradient text-on-primary-fixed font-bold font-[family-name:var(--font-headline)] uppercase tracking-widest transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  >
+                    {state.submitting ? dict.sending : dict.sendMessage}
+                  </button>
+                )}
+                <p className={`text-xs max-w-xs font-[family-name:var(--font-headline)] ${
+                  state.succeeded
+                    ? "text-primary text-base"
+                    : state.errors !== null
+                    ? "text-red-400"
+                    : "text-on-surface-variant"
+                }`}>
+                  {state.succeeded
+                    ? dict.successMessage
+                    : state.errors !== null
+                    ? dict.errorMessage
+                    : dict.disclaimer}
+                </p>
               </div>
-            </div>
-
-            <div className="relative group">
-              <label className="block text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4 font-[family-name:var(--font-headline)] transition-colors group-focus-within:text-primary">
-                {dict.yourMessage}
-              </label>
-              <textarea
-                placeholder={dict.messagePlaceholder}
-                rows={4}
-                className="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 text-xl text-white placeholder:text-white/20 resize-none focus:outline-none focus:border-b-2 focus:border-primary"
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center gap-12 pt-2">
-              <button
-                type="submit"
-                className="w-full md:w-auto px-12 py-4 neon-gradient text-on-primary-fixed font-bold font-[family-name:var(--font-headline)] uppercase tracking-widest transition-all duration-300 hover:scale-[1.02] active:scale-95"
-              >
-                {dict.sendMessage}
-              </button>
-              <p className="text-xs text-on-surface-variant max-w-xs">
-                {dict.disclaimer}
-              </p>
-            </div>
-          </form>
+            </form>
         </div>
       </div>
     </section>

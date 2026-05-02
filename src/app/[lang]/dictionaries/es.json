@@ -107,7 +107,15 @@
     "emailPlaceholder": "correo@ejemplo.com",
     "yourMessage": "Tu Mensaje",
     "messagePlaceholder": "Describe tu visión...",
+    "nameRequired": "El nombre es requerido.",
+    "emailRequired": "El correo electrónico es requerido.",
+    "emailInvalid": "Por favor ingresa un correo válido.",
+    "messageRequired": "El mensaje es requerido.",
+    "messageTooShort": "El mensaje debe tener al menos 10 caracteres.",
     "sendMessage": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "successMessage": "Mensaje enviado. Me pondré en contacto pronto.",
+    "errorMessage": "Algo salió mal. Por favor intenta de nuevo.",
     "disclaimer": "Al hacer clic en enviar, reconoces que tus datos serán manejados con absoluta integridad digital."
   },
   "footer": {
