@@ -188,7 +188,7 @@ export default function ContactSection({ dict }: { dict: ContactDict }) {
                   <button
                     type="submit"
                     disabled={state.submitting}
-                    className="w-full md:w-auto px-12 py-4 neon-gradient text-on-primary-fixed font-bold font-[family-name:var(--font-headline)] uppercase tracking-widest transition-all duration-300 hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="w-full md:w-auto px-8 py-4 bg-linear-to-br from-primary to-primary-container text-on-primary-fixed font-bold rounded-sm hover:brightness-110 transition-all flex items-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:brightness-100"
                   >
                     {state.submitting ? dict.sending : dict.sendMessage}
                   </button>
