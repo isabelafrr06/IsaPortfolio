@@ -83,9 +83,12 @@ export default function ContactSection({ dict }: { dict: ContactDict }) {
                   </p>
                   <a
                     href="mailto:isabelafrr06@gmail.com"
-                    className="text-xl font-[family-name:var(--font-headline)] font-semibold text-white hover:text-primary transition-colors"
+                    className="group/email inline-flex items-center gap-2 text-xl font-[family-name:var(--font-headline)] font-semibold text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-all"
                   >
                     isabelafrr06@gmail.com
+                    <svg className="w-4 h-4 opacity-40 group-hover/email:opacity-100 group-hover/email:translate-x-0.5 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                   </a>
                 </div>
               </div>
