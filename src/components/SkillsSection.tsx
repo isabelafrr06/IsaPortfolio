@@ -1,29 +1,47 @@
 import type { Dictionary } from "@/app/[lang]/dictionaries";
+import {
+  SiOpenjdk,
+  SiC,
+  SiCplusplus,
+  SiPython,
+  SiJavascript,
+  SiKotlin,
+  SiSwift,
+  SiMysql,
+  SiFirebase,
+  SiHtml5,
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiDotnet,
+} from "react-icons/si";
+import { FaDatabase } from "react-icons/fa";
+import type { IconType } from "react-icons";
 
 type SkillsDict = Dictionary["skills"];
 
-const techStack = [
-  { num: "01", name: "Java" },
-  { num: "02", name: "C" },
-  { num: "03", name: "C++" },
-  { num: "04", name: "Python" },
-  { num: "05", name: "JavaScript" },
-  { num: "06", name: "Kotlin" },
-  { num: "07", name: "Swift" },
-  { num: "08", name: "SQL" },
-  { num: "09", name: "MySQL" },
-  { num: "10", name: "Firebase" },
-  { num: "11", name: "HTML/CSS" },
-  { num: "12", name: "React.js" },
-  { num: "13", name: "Tailwind" },
-  { num: "14", name: "Node.js" },
-  { num: "15", name: ".NET" },
+const techStack: { num: string; name: string; Icon: IconType }[] = [
+  { num: "01", name: "Java",       Icon: SiOpenjdk },
+  { num: "02", name: "C",          Icon: SiC },
+  { num: "03", name: "C++",        Icon: SiCplusplus },
+  { num: "04", name: "Python",     Icon: SiPython },
+  { num: "05", name: "JavaScript", Icon: SiJavascript },
+  { num: "06", name: "Kotlin",     Icon: SiKotlin },
+  { num: "07", name: "Swift",      Icon: SiSwift },
+  { num: "08", name: "SQL",        Icon: FaDatabase },
+  { num: "09", name: "MySQL",      Icon: SiMysql },
+  { num: "10", name: "Firebase",   Icon: SiFirebase },
+  { num: "11", name: "HTML/CSS",   Icon: SiHtml5 },
+  { num: "12", name: "React.js",   Icon: SiReact },
+  { num: "13", name: "Tailwind",   Icon: SiTailwindcss },
+  { num: "14", name: "Node.js",    Icon: SiNodedotjs },
+  { num: "15", name: ".NET",       Icon: SiDotnet },
 ];
 
 const aiTools = [
   "Claude Code",
   "ChatGPT",
-  "Cursor",  
+  "Cursor",
   "GitHub Copilot",
   "Prompt Engineering",
   "AI Automation",
@@ -58,16 +76,14 @@ export default function SkillsSection({ dict }: { dict: SkillsDict }) {
             {dict.devEcosystem}
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {techStack.map((tech) => (
+            {techStack.map(({ num, name, Icon }) => (
               <div
-                key={tech.num}
-                className="glass-panel p-6 rounded-sm hover:bg-surface-container-high transition-all duration-300 border-l-2 border-transparent hover:border-primary"
+                key={num}
+                className="glass-panel p-6 rounded-sm hover:bg-surface-container-high transition-all duration-300 border-l-2 border-transparent hover:border-primary flex flex-col gap-3"
               >
-                <p className="text-xs font-mono text-tertiary mb-2">
-                  {tech.num}
-                </p>
-                <h4 className="font-bold text-lg font-[family-name:var(--font-headline)]">
-                  {tech.name}
+                <Icon className="w-7 h-7 text-primary/70" />
+                <h4 className="font-bold text-base font-[family-name:var(--font-headline)]">
+                  {name}
                 </h4>
               </div>
             ))}
