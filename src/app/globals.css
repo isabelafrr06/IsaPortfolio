@@ -108,3 +108,29 @@ h1, h2, h3, .headline {
   background-color: rgba(221, 183, 255, 0.3);
   color: #ddb7ff;
 }
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0); }
+  33%       { transform: translate(120px, -90px); }
+  66%       { transform: translate(-80px, 70px); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0); }
+  25%      { transform: translate(-130px, 80px); }
+  75%      { transform: translate(100px, -110px); }
+}
+
+@keyframes float-c {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(90px, 100px); }
+}
+
+@keyframes spin {
+  to { rotate: 360deg; }
+}
+
+@keyframes spin-diamond {
+  from { rotate: 45deg; }
+  to   { rotate: 405deg; }
+}

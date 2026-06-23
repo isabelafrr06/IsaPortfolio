@@ -16,7 +16,6 @@ export default function HeroSection({
       <section id="home" className="relative pt-30 xl:pt-0 min-h-screen flex items-center">
         {/* Decorative background */}
         <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-l from-primary/5 to-transparent pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-tertiary/5 blur-[120px] rounded-full pointer-events-none" />
 
         <div className="max-w-[1440px] mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Content */}
@@ -93,7 +92,10 @@ export default function HeroSection({
 
           {/* Right: Portrait */}
           <div className="lg:col-span-5 relative group">
-            <div className="relative w-full max-w-[280px] mx-auto aspect-square glass-card overflow-hidden rounded-sm">
+            <div
+              className="relative w-full max-w-[280px] mx-auto aspect-square"
+              style={{ maskImage: "radial-gradient(ellipse 85% 85% at 50% 40%, black 45%, transparent 85%)" }}
+            >
               <Image
                 src="/portrait.png"
                 alt={aboutDict.portraitAlt}
@@ -102,7 +104,6 @@ export default function HeroSection({
                 className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
                 priority
               />
-              <div className="absolute inset-0 bg-linear-to-t from-surface to-transparent opacity-60" />
             </div>
           </div>
         </div>

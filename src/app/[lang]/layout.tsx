@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "../globals.css";
+import BackgroundShapes from "@/components/BackgroundShapes";
 import { getDictionary, hasLocale, type Locale } from "./dictionaries";
 import { notFound } from "next/navigation";
 
@@ -50,7 +51,10 @@ export default async function RootLayout({
       className={`dark ${plusJakarta.variable} ${inter.variable} antialiased`}
     >
       <body className="bg-surface text-on-surface overflow-x-hidden">
-        {children}
+        <BackgroundShapes />
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );
