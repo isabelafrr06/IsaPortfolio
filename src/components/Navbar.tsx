@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
 
@@ -23,6 +23,21 @@ export default function Navbar({
   lang: string;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollMid = window.scrollY + window.innerHeight * 0.4;
+      let active = "home";
+      for (const key of navKeys) {
+        const el = document.getElementById(navHrefs[key].slice(1));
+        if (el && el.offsetTop <= scrollMid) active = key;
+      }
+      setActiveSection(active);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl">
@@ -37,9 +52,12 @@ export default function Navbar({
             <a
               key={key}
               href={navHrefs[key]}
-              className="text-white/60 font-medium hover:text-primary transition-all duration-300"
+              className={`relative font-medium transition-all duration-300 ${activeSection === key ? "text-primary" : "text-white/60 hover:text-primary"}`}
             >
               {dict[key]}
+              {activeSection === key && (
+                <span className="absolute -bottom-1 left-0 w-full h-px bg-primary" />
+              )}
             </a>
           ))}
           <LanguageSwitcher lang={lang} />

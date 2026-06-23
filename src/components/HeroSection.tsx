@@ -1,5 +1,6 @@
-import Image from "next/image";
 import type { Dictionary } from "@/app/[lang]/dictionaries";
+import HeroHeadline from "@/components/HeroHeadline";
+import PortraitTilt from "@/components/PortraitTilt";
 
 type HeroDict = Dictionary["hero"];
 type AboutDict = Dictionary["about"];
@@ -27,13 +28,7 @@ export default function HeroSection({
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] mb-8 text-glow font-[family-name:var(--font-headline)]">
-              Isabela
-              <br />
-              Rodríguez
-              <br />
-              Rocha
-            </h1>
+            <HeroHeadline />
 
             <p className="max-w-xl text-lg md:text-xl text-on-surface-variant font-light leading-relaxed mb-12 border-l-2 border-outline-variant pl-8">
               {heroDict.description}
@@ -91,20 +86,8 @@ export default function HeroSection({
           </div>
 
           {/* Right: Portrait */}
-          <div className="lg:col-span-5 relative group">
-            <div
-              className="relative w-full max-w-[280px] mx-auto aspect-square"
-              style={{ maskImage: "radial-gradient(ellipse 85% 85% at 50% 40%, black 45%, transparent 85%)" }}
-            >
-              <Image
-                src="/portrait.png"
-                alt={aboutDict.portraitAlt}
-                fill
-                sizes="280px"
-                className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
-                priority
-              />
-            </div>
+          <div className="lg:col-span-5 relative">
+            <PortraitTilt alt={aboutDict.portraitAlt} />
           </div>
         </div>
       </section>

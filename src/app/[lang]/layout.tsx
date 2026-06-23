@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import "../globals.css";
 import BackgroundShapes from "@/components/BackgroundShapes";
+import CustomCursor from "@/components/CustomCursor";
 import { getDictionary, hasLocale, type Locale } from "./dictionaries";
 import { notFound } from "next/navigation";
 
@@ -52,6 +53,7 @@ export default async function RootLayout({
     >
       <body className="bg-surface text-on-surface overflow-x-hidden">
         <BackgroundShapes />
+        <CustomCursor />
         <div className="relative z-10">
           {children}
         </div>

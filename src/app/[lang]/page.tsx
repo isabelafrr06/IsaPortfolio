@@ -6,6 +6,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import RevealOnScroll from "@/components/RevealOnScroll";
 
 export default async function Home({
   params,
@@ -21,9 +22,9 @@ export default async function Home({
       <Navbar dict={dict.nav} lang={lang} />
       <main>
         <HeroSection heroDict={dict.hero} aboutDict={dict.about} />
-        <ExperienceSection dict={dict.experience} />
-        <SkillsSection dict={dict.skills} />
-        <ContactSection dict={dict.contact} />
+        <RevealOnScroll><ExperienceSection dict={dict.experience} /></RevealOnScroll>
+        <RevealOnScroll><SkillsSection dict={dict.skills} /></RevealOnScroll>
+        <RevealOnScroll><ContactSection dict={dict.contact} /></RevealOnScroll>
       </main>
       <Footer dict={dict.footer} />
     </>

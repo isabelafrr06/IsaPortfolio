@@ -87,19 +87,19 @@ const SHAPES = [
   {
     wrapper: "absolute top-[40%] right-[5%]",
     inner: "w-px h-32 bg-primary/15",
-    animation: "float-b 28s ease-in-out 3s infinite",
+    animation: "float-b 28s ease-in-out 3s infinite, spin 9s linear infinite",
     mousDepth: 45, scrollDepth: 0.3,
   },
   {
     wrapper: "absolute top-[90%] left-[8%]",
     inner: "w-24 h-px bg-secondary/15",
-    animation: "float-a 24s ease-in-out 6s infinite",
+    animation: "float-a 24s ease-in-out 6s infinite, spin 13s linear infinite reverse",
     mousDepth: 42, scrollDepth: -0.26,
   },
   {
     wrapper: "absolute top-[200%] right-[40%]",
     inner: "w-px h-20 bg-tertiary/20",
-    animation: "float-c 20s ease-in-out 11s infinite",
+    animation: "float-c 20s ease-in-out 11s infinite, spin 11s linear infinite",
     mousDepth: 50, scrollDepth: 0.2,
   },
   // Small dots
@@ -179,6 +179,8 @@ export default function BackgroundShapes() {
 
       raf.current = requestAnimationFrame(tick);
     };
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     window.addEventListener("mousemove", onMouseMove);
     window.addEventListener("scroll", onScroll, { passive: true });
