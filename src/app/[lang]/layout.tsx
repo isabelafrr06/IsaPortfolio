@@ -47,6 +47,26 @@ export async function generateMetadata({
       ],
       apple: "/favicon.png",
     },
+    openGraph: {
+      title: dict.metadata.title,
+      description: dict.metadata.description,
+      type: "website",
+      locale: lang === "es" ? "es_CR" : "en_US",
+      images: [
+        {
+          url: "/favicon.png",
+          width: 256,
+          height: 256,
+          alt: "Isabela Rodríguez Rocha",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary",
+      title: dict.metadata.title,
+      description: dict.metadata.description,
+      images: ["/favicon.png"],
+    },
   };
 }
 
