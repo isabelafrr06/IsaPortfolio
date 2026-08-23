@@ -3,7 +3,8 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 export const alt = "Isabela Rodríguez Rocha";
-export const size = { width: 1200, height: 1200 };
+/** Small square thumbnail — keeps link previews compact (not a large media card). */
+export const size = { width: 400, height: 400 };
 export const contentType = "image/png";
 
 export default async function Image() {
@@ -26,7 +27,6 @@ export default async function Image() {
           overflow: "hidden",
         }}
       >
-        {/* Soft purple glow */}
         <div
           style={{
             position: "absolute",
@@ -40,7 +40,6 @@ export default async function Image() {
             display: "flex",
           }}
         />
-        {/* Soft blue glow */}
         <div
           style={{
             position: "absolute",
@@ -54,33 +53,18 @@ export default async function Image() {
             display: "flex",
           }}
         />
-        {/* Soft green accent */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: "8%",
-            right: "12%",
-            width: "30%",
-            height: "30%",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(74,225,118,0.12) 0%, rgba(74,225,118,0) 70%)",
-            display: "flex",
-          }}
-        />
 
-        {/* Portrait frame */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            width: 780,
-            height: 780,
+            width: 260,
+            height: 260,
             borderRadius: "50%",
             background:
               "linear-gradient(145deg, #ddb7ff 0%, #b76dff 45%, #0566d9 100%)",
-            padding: 6,
+            padding: 3,
             position: "relative",
           }}
         >
@@ -97,8 +81,8 @@ export default async function Image() {
             <img
               src={portraitSrc}
               alt=""
-              width={768}
-              height={768}
+              width={254}
+              height={254}
               style={{
                 width: "100%",
                 height: "100%",
