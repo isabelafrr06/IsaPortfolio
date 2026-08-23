@@ -1,9 +1,15 @@
 "use client";
 import Image from "next/image";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function PortraitTilt({ alt }: { alt: string }) {
   const ref = useRef<HTMLDivElement>(null);
+  // Defer image until client mount so WhatsApp doesn't scrape it for a large preview.
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
 
   const onMouseMove = (e: React.MouseEvent) => {
     const el = ref.current;
@@ -28,14 +34,16 @@ export default function PortraitTilt({ alt }: { alt: string }) {
       className="relative w-full max-w-[280px] mx-auto aspect-square transition-transform duration-300 ease-out"
       style={{ maskImage: "radial-gradient(ellipse 90% 90% at 50% 40%, black 20%, transparent 75%)" }}
     >
-      <Image
-        src="/portrait.png"
-        alt={alt}
-        fill
-        sizes="280px"
-        className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-        priority
-      />
+      {ready ? (
+        <Image
+          src="/portrait.png"
+          alt={alt}
+          fill
+          sizes="280px"
+          className="object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+          priority
+        />
+      ) : null}
     </div>
   );
 }
