@@ -47,7 +47,7 @@ export async function generateMetadata({
       locale: lang === "es" ? "es_CR" : "en_US",
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title: dict.metadata.title,
       description: dict.metadata.description,
     },
