@@ -30,9 +30,27 @@ export async function generateMetadata({
   const { lang } = await params;
   if (!hasLocale(lang)) return {};
   const dict = await getDictionary(lang);
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000");
+
   return {
+    metadataBase: new URL(siteUrl),
     title: dict.metadata.title,
     description: dict.metadata.description,
+    openGraph: {
+      title: dict.metadata.title,
+      description: dict.metadata.description,
+      type: "website",
+      locale: lang === "es" ? "es_CR" : "en_US",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.metadata.title,
+      description: dict.metadata.description,
+    },
   };
 }
 
