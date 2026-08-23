@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none">
+  <rect width="256" height="256" fill="#131313"/>
+  <circle cx="210" cy="20" r="90" fill="#b76dff" fill-opacity="0.28"/>
+  <defs>
+    <linearGradient id="g" x1="40" y1="40" x2="216" y2="216" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ddb7ff"/>
+      <stop offset="0.45" stop-color="#b76dff"/>
+      <stop offset="1" stop-color="#0566d9"/>
+    </linearGradient>
+  </defs>
+  <circle cx="128" cy="128" r="88" fill="url(#g)"/>
+  <circle cx="128" cy="128" r="72" fill="#131313"/>
+  <text
+    x="128"
+    y="142"
+    text-anchor="middle"
+    font-family="Arial Black, Helvetica, sans-serif"
+    font-size="54"
+    font-weight="800"
+    fill="#ddb7ff"
+  >IRR</text>
+</svg>

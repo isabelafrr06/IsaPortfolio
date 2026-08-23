@@ -40,11 +40,12 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title: dict.metadata.title,
     description: dict.metadata.description,
-    openGraph: {
-      title: dict.metadata.title,
-      description: dict.metadata.description,
-      type: "website",
-      locale: lang === "es" ? "es_CR" : "en_US",
+    icons: {
+      icon: [
+        { url: "/favicon.svg", type: "image/svg+xml" },
+        { url: "/favicon.png", type: "image/png" },
+      ],
+      apple: "/favicon.png",
     },
   };
 }
