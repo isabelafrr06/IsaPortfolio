@@ -36,20 +36,25 @@ export async function generateMetadata({
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000");
 
+  const pageUrl = `${siteUrl.replace(/\/$/, "")}/${lang}`;
+  const fbAppId = process.env.NEXT_PUBLIC_FB_APP_ID;
+
   return {
     metadataBase: new URL(siteUrl),
     title: dict.metadata.title,
     description: dict.metadata.description,
     icons: {
       icon: [
+        { url: "/favicon.ico", sizes: "any" },
         { url: "/favicon.svg", type: "image/svg+xml" },
-        { url: "/favicon.png", type: "image/png" },
+        { url: "/favicon.png", type: "image/png", sizes: "256x256" },
       ],
       apple: "/favicon.png",
     },
     openGraph: {
       title: dict.metadata.title,
       description: dict.metadata.description,
+      url: pageUrl,
       type: "website",
       locale: lang === "es" ? "es_CR" : "en_US",
       images: [
@@ -67,6 +72,7 @@ export async function generateMetadata({
       description: dict.metadata.description,
       images: ["/favicon.png"],
     },
+    ...(fbAppId ? { facebook: { appId: fbAppId } } : {}),
   };
 }
 
