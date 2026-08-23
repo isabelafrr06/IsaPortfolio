@@ -2,12 +2,11 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "Isabela Rodríguez Rocha";
-/** Small square thumbnail — keeps link previews compact (not a large media card). */
-export const size = { width: 400, height: 400 };
+export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-export default async function Image() {
+/** Small app icon used by WhatsApp/iMessage as the compact link thumbnail. */
+export default async function Icon() {
   const portrait = await readFile(
     join(process.cwd(), "public/portrait.png")
   );
@@ -30,42 +29,27 @@ export default async function Image() {
         <div
           style={{
             position: "absolute",
-            top: "-10%",
-            right: "-15%",
-            width: "70%",
-            height: "70%",
+            top: "-20%",
+            right: "-20%",
+            width: "80%",
+            height: "80%",
             borderRadius: "50%",
             background:
-              "radial-gradient(circle, rgba(183,109,255,0.35) 0%, rgba(183,109,255,0) 68%)",
+              "radial-gradient(circle, rgba(183,109,255,0.4) 0%, rgba(183,109,255,0) 70%)",
             display: "flex",
           }}
         />
-        <div
-          style={{
-            position: "absolute",
-            bottom: "-5%",
-            left: "-10%",
-            width: "55%",
-            height: "55%",
-            borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(5,102,217,0.22) 0%, rgba(5,102,217,0) 70%)",
-            display: "flex",
-          }}
-        />
-
         <div
           style={{
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            width: 260,
-            height: 260,
+            width: 148,
+            height: 148,
             borderRadius: "50%",
             background:
               "linear-gradient(145deg, #ddb7ff 0%, #b76dff 45%, #0566d9 100%)",
-            padding: 3,
-            position: "relative",
+            padding: 2,
           }}
         >
           <div
@@ -81,8 +65,8 @@ export default async function Image() {
             <img
               src={portraitSrc}
               alt=""
-              width={254}
-              height={254}
+              width={144}
+              height={144}
               style={{
                 width: "100%",
                 height: "100%",
