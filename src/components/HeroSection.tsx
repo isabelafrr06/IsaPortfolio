@@ -63,21 +63,21 @@ export default function HeroSection({
             </div>
 
             {/* Stats */}
-            <div className="mt-8 grid grid-cols-3 gap-12 border-t border-outline-variant/10 pt-12 w-full max-w-2xl">
+            <div className="mt-8 grid grid-cols-3 gap-6 sm:gap-12 border-t border-outline-variant/10 pt-12 w-full max-w-2xl">
               <a href="#about" className="group">
-                <div className="text-primary font-bold text-2xl mb-1 group-hover:brightness-125 transition-all">{heroDict.stat1Value}</div>
+                <div className="text-primary font-bold text-xl md:text-2xl mb-1 group-hover:brightness-125 transition-all">{heroDict.stat1Value}</div>
                 <div className="text-white/40 uppercase tracking-widest text-[10px] group-hover:text-white/60 transition-colors">
                   {heroDict.stat1Label}
                 </div>
               </a>
-              <a href="#projects" className="group">
-                <div className="text-primary font-bold text-2xl mb-1 group-hover:brightness-125 transition-all">{heroDict.stat2Value}</div>
+              <a href="#skills" className="group">
+                <div className="text-primary font-bold text-xl md:text-2xl mb-1 group-hover:brightness-125 transition-all">{heroDict.stat2Value}</div>
                 <div className="text-white/40 uppercase tracking-widest text-[10px] group-hover:text-white/60 transition-colors">
                   {heroDict.stat2Label}
                 </div>
               </a>
               <a href="#skills" className="group">
-                <div className="text-primary font-bold text-2xl mb-1 group-hover:brightness-125 transition-all">{heroDict.stat3Value}</div>
+                <div className="text-primary font-bold text-xl md:text-2xl mb-1 group-hover:brightness-125 transition-all">{heroDict.stat3Value}</div>
                 <div className="text-white/40 uppercase tracking-widest text-[10px] group-hover:text-white/60 transition-colors">
                   {heroDict.stat3Label}
                 </div>

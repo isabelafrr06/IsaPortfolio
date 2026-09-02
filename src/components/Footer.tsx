@@ -1,4 +1,5 @@
-import type { Dictionary } from "@/app/[lang]/dictionaries";
+import Link from "next/link";
+import type { Dictionary, Locale } from "@/app/[lang]/dictionaries";
 
 type FooterDict = Dictionary["footer"];
 
@@ -8,12 +9,18 @@ const footerLinks = [
   { label: "Email", href: "mailto:isabelafrr06@gmail.com" },
 ];
 
-export default function Footer({ dict }: { dict: FooterDict }) {
+export default function Footer({
+  dict,
+  lang,
+}: {
+  dict: FooterDict;
+  lang: Locale;
+}) {
   return (
     <footer className="w-full py-12 bg-surface-container-low">
       <div className="flex flex-col md:flex-row justify-between items-center px-12 gap-8 w-full max-w-[1440px] mx-auto font-[family-name:var(--font-headline)] uppercase tracking-[0.2em] text-[10px]">
         <div className="text-white/40">{dict.copyright}</div>
-        <div className="flex gap-12">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
           {footerLinks.map((link) => (
             <a
               key={link.label}
@@ -23,6 +30,12 @@ export default function Footer({ dict }: { dict: FooterDict }) {
               {link.label}
             </a>
           ))}
+          <Link
+            href={`/${lang}/privacy`}
+            className="text-white/40 hover:text-tertiary transition-colors duration-500 opacity-80 hover:opacity-100"
+          >
+            {dict.privacyPolicy}
+          </Link>
         </div>
       </div>
     </footer>

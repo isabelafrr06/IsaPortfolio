@@ -24,9 +24,9 @@ export default async function Home({
         <HeroSection heroDict={dict.hero} aboutDict={dict.about} />
         <RevealOnScroll><ExperienceSection dict={dict.experience} /></RevealOnScroll>
         <RevealOnScroll><SkillsSection dict={dict.skills} /></RevealOnScroll>
-        <RevealOnScroll><ContactSection dict={dict.contact} /></RevealOnScroll>
+        <RevealOnScroll><ContactSection dict={dict.contact} lang={lang} /></RevealOnScroll>
       </main>
-      <Footer dict={dict.footer} />
+      <Footer dict={dict.footer} lang={lang} />
     </>
   );
 }

@@ -2,14 +2,20 @@
 
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import type { Dictionary } from "@/app/[lang]/dictionaries";
+import type { Dictionary, Locale } from "@/app/[lang]/dictionaries";
 
 type ContactDict = Dictionary["contact"];
 type FieldErrors = { name?: string; email?: string; message?: string };
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export default function ContactSection({ dict }: { dict: ContactDict }) {
+export default function ContactSection({
+  dict,
+  lang,
+}: {
+  dict: ContactDict;
+  lang: Locale;
+}) {
   const [state, handleSubmit] = useForm("xrejbyag");
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
@@ -105,10 +111,10 @@ export default function ContactSection({ dict }: { dict: ContactDict }) {
                     {dict.directLine}
                   </p>
                   <a
-                    href="tel:+50683047863"
+                    href={`tel:${dict.phoneHref}`}
                     className="text-xl font-[family-name:var(--font-headline)] font-semibold text-white hover:text-primary transition-colors"
                   >
-                    (506) 8304-7863
+                    {dict.phoneDisplay}
                   </a>
                 </div>
               </div>
@@ -204,7 +210,17 @@ export default function ContactSection({ dict }: { dict: ContactDict }) {
                     ? dict.successMessage
                     : state.errors !== null
                     ? dict.errorMessage
-                    : dict.disclaimer}
+                    : (
+                      <>
+                        {dict.disclaimer}{" "}
+                        <a
+                          href={`/${lang}/privacy`}
+                          className="text-primary hover:underline"
+                        >
+                          {dict.privacyLink}
+                        </a>
+                      </>
+                    )}
                 </p>
               </div>
             </form>

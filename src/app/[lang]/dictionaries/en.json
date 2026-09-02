@@ -16,10 +16,10 @@
     "description": "Computing graduate passionate about building clean, purposeful software. Turning ideas into real products.",
     "viewWork": "View My Work",
     "readCV": "Read CV",
-    "stat1Value": "2025",
-    "stat1Label": "UCR Graduate",
-    "stat2Value": "02",
-    "stat2Label": "Live Projects",
+    "stat1Value": "UCR",
+    "stat1Label": "Graduate",
+    "stat2Value": "EN - ES",
+    "stat2Label": "Bilingual",
     "stat3Value": "10+",
     "stat3Label": "Technologies"
   },
@@ -99,6 +99,8 @@
     "role": "Software Developer",
     "electronicMail": "Electronic Mail",
     "directLine": "Direct Line",
+    "phoneDisplay": "(506) 8559-7007",
+    "phoneHref": "+50685597007",
     "basedIn": "Based In",
     "locationValue": "Heredia, Costa Rica",
     "fullName": "Full Name",
@@ -116,9 +118,57 @@
     "sending": "Sending...",
     "successMessage": "Message sent. I'll be in touch soon.",
     "errorMessage": "Something went wrong. Please try again.",
-    "disclaimer": "By clicking send, you acknowledge that your data will be handled with absolute digital integrity."
+    "disclaimer": "By clicking send, you acknowledge that your data will be handled with absolute digital integrity.",
+    "privacyLink": "Privacy Policy"
   },
   "footer": {
-    "copyright": "© 2026 IRR."
+    "copyright": "© 2026 IRR.",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "privacy": {
+    "metadataTitle": "Privacy Policy | IRR",
+    "metadataDescription": "How Isabela Rodríguez Rocha collects, uses, and protects your personal information on this portfolio website.",
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: August 2026",
+    "backHome": "Back to home",
+    "sections": [
+      {
+        "title": "Overview",
+        "paragraphs": [
+          "This website is a personal portfolio operated by Isabela Rodríguez Rocha. I respect your privacy and only collect the information needed to respond when you contact me through this site."
+        ]
+      },
+      {
+        "title": "Information I collect",
+        "paragraphs": [
+          "When you use the contact form, I receive the name, email address, and message you choose to send. I do not ask for payment details or sensitive personal data through this website.",
+          "Like most websites, basic technical data (such as browser type or pages visited) may be processed by my hosting provider to deliver the site securely."
+        ]
+      },
+      {
+        "title": "How your information is used",
+        "paragraphs": [
+          "Contact form submissions are processed through Formspree and used only to read and reply to your message. I do not sell your data or use it for advertising."
+        ]
+      },
+      {
+        "title": "How long I keep it",
+        "paragraphs": [
+          "I keep contact messages only as long as needed to respond and follow up on legitimate inquiries, unless a longer period is required by law."
+        ]
+      },
+      {
+        "title": "Your rights",
+        "paragraphs": [
+          "You may ask me to access, correct, or delete the personal information you shared through the contact form by emailing me at isabelafrr06@gmail.com."
+        ]
+      },
+      {
+        "title": "Contact",
+        "paragraphs": [
+          "If you have questions about this policy, reach me at isabelafrr06@gmail.com or (506) 8559-7007."
+        ]
+      }
+    ]
   }
 }
