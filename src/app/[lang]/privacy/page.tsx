@@ -33,7 +33,7 @@ export default async function PrivacyPage({
   return (
     <>
       <Navbar dict={dict.nav} lang={lang as Locale} />
-      <main className="min-h-screen pt-32 pb-24 px-8 max-w-3xl mx-auto">
+      <main className="min-h-screen pt-32 pb-24 px-6 md:px-12 max-w-3xl mx-auto">
         <Link
           href={`/${lang}`}
           className="inline-flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors mb-12 font-[family-name:var(--font-headline)] uppercase tracking-[0.2em]"

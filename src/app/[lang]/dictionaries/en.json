@@ -7,6 +7,7 @@
     "home": "Home",
     "about": "About",
     "experience": "Experience",
+    "projects": "Projects",
     "skills": "Skills",
     "contact": "Contact",
     "hireMe": "Hire Me"
@@ -15,7 +16,7 @@
     "tagline": "Software Development",
     "description": "Computing graduate passionate about building clean, purposeful software. Turning ideas into real products.",
     "viewWork": "View My Work",
-    "readCV": "Read CV",
+    "aboutMe": "About Me",
     "stat1Value": "UCR",
     "stat1Label": "Graduate",
     "stat2Value": "EN - ES",
@@ -24,8 +25,21 @@
     "stat3Label": "Technologies"
   },
   "about": {
-    "academicTitle": "Academic",
-    "academicTitle2": "Foundation",
+    "eyebrow": "About Me",
+    "title": "A little",
+    "titleHighlight": "about me.",
+    "narrative": [
+      "I'm a Computing graduate from the University of Costa Rica, and I like building software that people actually use. What I know came from shipping real projects end to end, not only from coursework.",
+      "It started with technical support and repairs, grew into internal tools for different projects, and turned into live products that I designed, built, and deployed myself.",
+      "I care about clean structure, readable code, and interfaces that feel obvious to use. Right now I'm looking for a team where I can keep learning and contribute from day one."
+    ],
+    "facts": [
+      { "label": "Based in", "value": "Heredia, Costa Rica" },
+      { "label": "Languages", "value": "Spanish native · English B2+" },
+      { "label": "Focus", "value": "Full-stack web development" },
+      { "label": "Availability", "value": "Open to opportunities" }
+    ],
+    "educationLabel": "Education",
     "degreeTitle": "B.Sc. in Computing",
     "university": "University of Costa Rica",
     "degreeYear": "2025",
@@ -35,27 +49,33 @@
     "portraitAlt": "Isabela Rodríguez Rocha"
   },
   "experience": {
+    "eyebrow": "Career Path",
     "sectionTitle": "Professional Experience",
     "items": [
       {
+        "period": "2024",
         "title": "Supervised Professional Practice",
         "company": "UCR - Aldeas SOS",
         "description": "Collaborated with a team to build internal software tools for a non-profit organization, improving data management and streamlining daily operations. Gained hands-on experience in full-stack development, agile workflows, and delivering solutions aligned with real user needs."
       },
       {
+        "period": "2020 — Present",
         "title": "Computer Technician",
         "company": "Independent Consultancy",
         "description": "Provided technical support to individuals and small businesses, handling hardware repairs, software installations, and network setup. Extended this work into web development by building and deploying IsaStore CR, my own live e-commerce platform. Developed strong diagnostic skills and the ability to explain technical concepts in accessible language."
       },
       {
+        "period": "2019 — 2020",
         "title": "CAD Designer",
         "company": "Align Technology",
         "description": "Designed personalized dental treatment plans using specialized CAD software, crafting precise 3D models to guide orthodontic care. Strengthened my attention to detail, spatial reasoning, and ability to deliver high-quality work within tight deadlines."
       }
-    ],
-    "projectsTitle": "Featured Projects",
-    "projectsSubtitle": "Live & Deployed",
-    "projects": [
+    ]
+  },
+  "projects": {
+    "eyebrow": "Live & Deployed",
+    "title": "Featured Projects",
+    "items": [
       {
         "title": "IsaStore CR",
         "description": "E-commerce platform for electronics and accessories featuring a product catalog, shopping cart, and streamlined checkout — built and deployed end-to-end.",
@@ -70,6 +90,7 @@
     "visitProject": "Visit Project"
   },
   "skills": {
+    "eyebrow": "What I Work With",
     "title": "Technical",
     "titleHighlight": "Skills.",
     "devEcosystem": "Development Ecosystem",
@@ -87,12 +108,21 @@
     "techSupport": "Technical Support",
     "techSupportDesc": "Hands-on experience diagnosing and resolving hardware and software issues. Skilled in system maintenance, network setup, and technical problem-solving to keep operations running smoothly.",
     "languages": "Languages",
-    "spanish": "Spanish",
-    "nativeProficiency": "Native Proficiency",
-    "english": "English",
-    "intermediateB2": "Intermediate B2+"
+    "languageList": [
+      {
+        "name": "Spanish",
+        "level": "Native",
+        "note": "Mother tongue"
+      },
+      {
+        "name": "English",
+        "level": "B2+",
+        "note": "Professional working proficiency"
+      }
+    ]
   },
   "contact": {
+    "eyebrow": "Get In Touch",
     "heading": "Let's start a",
     "headingHighlight": "conversation.",
     "portfolioIdentity": "Portfolio Identity",

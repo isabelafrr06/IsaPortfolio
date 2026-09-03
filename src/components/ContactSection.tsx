@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import type { Dictionary, Locale } from "@/app/[lang]/dictionaries";
+import Section from "@/components/Section";
+import SectionHeading from "@/components/SectionHeading";
 
 type ContactDict = Dictionary["contact"];
 type FieldErrors = { name?: string; email?: string; message?: string };
@@ -50,24 +52,21 @@ export default function ContactSection({
   }
 
   return (
-    <section id="contact" className="pt-18 pb-24 px-8 max-w-[1440px] mx-auto">
-      {/* Header */}
-      <header className="mb-24">
-        <h2 className="text-6xl font-extrabold font-[family-name:var(--font-headline)] tracking-tighter leading-[0.9] text-on-surface">
-          {dict.heading} <br />
-          <span className="text-primary italic">{dict.headingHighlight}</span>
-        </h2>
-      </header>
+    <Section id="contact">
+      <SectionHeading eyebrow={dict.eyebrow}>
+        {dict.heading}{" "}
+        <span className="text-primary italic">{dict.headingHighlight}</span>
+      </SectionHeading>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         {/* Left: Contact Info */}
         <div className="lg:col-span-5 flex flex-col gap-8">
-          <div className="bg-surface-container-low p-12 flex flex-col gap-12 group transition-all duration-500 hover:bg-surface-container-high">
+          <div className="bg-surface-container-low rounded-lg p-6 sm:p-8 lg:p-10 flex flex-col gap-10 transition-all duration-500 hover:bg-surface-container-high">
             <div className="flex flex-col gap-1">
               <span className="text-tertiary font-mono text-xs uppercase tracking-[0.3em] mb-2">
                 {dict.portfolioIdentity}
               </span>
-              <h3 className="text-3xl font-[family-name:var(--font-headline)] font-bold text-white">
+              <h3 className="text-2xl sm:text-3xl font-[family-name:var(--font-headline)] font-bold text-white">
                 Isabela Rodríguez Rocha
               </h3>
               <p className="text-on-surface-variant">
@@ -142,8 +141,8 @@ export default function ContactSection({
 
         {/* Right: Contact Form */}
         <div className="lg:col-span-7">
-          <form onSubmit={onSubmit} className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <form onSubmit={onSubmit} className="space-y-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div className="relative group">
                   <label className="block text-[10px] uppercase tracking-[0.2em] text-on-surface-variant mb-4 font-[family-name:var(--font-headline)] transition-colors group-focus-within:text-primary">
                     {dict.fullName}
@@ -189,12 +188,12 @@ export default function ContactSection({
                 <ValidationError field="message" errors={state.errors} className="text-xs text-red-400 mt-2 block" />
               </div>
 
-              <div className="flex flex-col md:flex-row items-center gap-12 pt-2">
+              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-12 pt-2">
                 {!state.succeeded && (
                   <button
                     type="submit"
                     disabled={state.submitting}
-                    className="w-full md:w-auto px-8 py-4 bg-linear-to-br from-primary to-primary-container text-on-primary-fixed font-bold rounded-sm hover:brightness-110 transition-all flex items-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:brightness-100"
+                    className="w-full md:w-auto px-8 py-4 bg-linear-to-br from-primary to-primary-container text-on-primary-fixed font-bold rounded-sm cursor-pointer hover:brightness-110 transition-all flex items-center gap-2 group disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:brightness-100"
                   >
                     {state.submitting ? dict.sending : dict.sendMessage}
                   </button>
@@ -226,6 +225,6 @@ export default function ContactSection({
             </form>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

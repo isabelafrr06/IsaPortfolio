@@ -6,14 +6,15 @@ import type { Dictionary } from "@/app/[lang]/dictionaries";
 
 type NavDict = Dictionary["nav"];
 
-const navKeys = ["home", "about", "experience", "skills", "contact"] as const;
-const navHrefs: Record<(typeof navKeys)[number], string> = {
-  home: "#home",
-  about: "#about",
-  experience: "#experience",
-  skills: "#skills",
-  contact: "#contact",
-};
+// Each key doubles as the id of the section it points to.
+const navKeys = [
+  "home",
+  "about",
+  "experience",
+  "projects",
+  "skills",
+  "contact",
+] as const;
 
 export default function Navbar({
   dict,
@@ -27,32 +28,45 @@ export default function Navbar({
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollMid = window.scrollY + window.innerHeight * 0.4;
+      // Sections sit inside transformed reveal wrappers, so offsetTop is
+      // relative to those wrappers and unusable here.
+      const marker = window.innerHeight * 0.4;
       let active = "home";
       for (const key of navKeys) {
-        const el = document.getElementById(navHrefs[key].slice(1));
-        if (el && el.offsetTop <= scrollMid) active = key;
+        const el = document.getElementById(key);
+        if (el && el.getBoundingClientRect().top <= marker) active = key;
       }
       setActiveSection(active);
     };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Absolute so the nav also works from pages like /[lang]/privacy.
+  const hrefFor = (key: string) => `/${lang}#${key}`;
+
   return (
     <nav className="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl">
-      <div className="flex justify-between items-center px-8 py-6 max-w-[1440px] mx-auto font-[family-name:var(--font-headline)] tracking-tighter">
-        <div className="text-2xl font-bold tracking-tighter text-primary">
+      <div className="flex justify-between items-center px-6 md:px-12 py-6 max-w-[1440px] mx-auto font-[family-name:var(--font-headline)] tracking-tighter">
+        <a
+          href={hrefFor("home")}
+          className="text-2xl font-bold tracking-tighter text-primary"
+        >
           IRR
-        </div>
+        </a>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8">
           {navKeys.map((key) => (
             <a
               key={key}
-              href={navHrefs[key]}
-              className={`relative font-medium transition-all duration-300 ${activeSection === key ? "text-primary" : "text-white/60 hover:text-primary"}`}
+              href={hrefFor(key)}
+              className={`relative font-medium transition-all duration-300 ${
+                activeSection === key
+                  ? "text-primary"
+                  : "text-white/60 hover:text-primary"
+              }`}
             >
               {dict[key]}
               {activeSection === key && (
@@ -64,17 +78,18 @@ export default function Navbar({
         </div>
 
         <a
-          href="#contact"
-          className="hidden md:inline-block bg-linear-to-br from-primary to-primary-container text-on-primary-fixed font-bold py-2.5 px-6 rounded-sm scale-95 duration-200 ease-in-out hover:scale-100 transition-all"
+          href={hrefFor("contact")}
+          className="hidden lg:inline-block bg-linear-to-br from-primary to-primary-container text-on-primary-fixed font-bold py-2.5 px-6 rounded-sm scale-95 duration-200 ease-in-out hover:scale-100 transition-all"
         >
           {dict.hireMe}
         </a>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-on-surface"
+          className="lg:hidden text-on-surface cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
         >
           <svg
             className="w-6 h-6"
@@ -103,11 +118,11 @@ export default function Navbar({
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-surface-container-low px-8 pb-6 flex flex-col gap-4 font-[family-name:var(--font-headline)]">
+        <div className="lg:hidden bg-surface-container-low px-6 md:px-12 pb-6 flex flex-col gap-4 font-[family-name:var(--font-headline)]">
           {navKeys.map((key) => (
             <a
               key={key}
-              href={navHrefs[key]}
+              href={hrefFor(key)}
               className="text-white/60 font-medium hover:text-primary transition-colors py-2"
               onClick={() => setMobileOpen(false)}
             >

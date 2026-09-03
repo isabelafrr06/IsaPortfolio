@@ -7,6 +7,7 @@
     "home": "Inicio",
     "about": "Sobre mí",
     "experience": "Experiencia",
+    "projects": "Proyectos",
     "skills": "Habilidades",
     "contact": "Contacto",
     "hireMe": "Contrátame"
@@ -15,7 +16,7 @@
     "tagline": "Desarrollo de Software",
     "description": "Graduada en Computación apasionada por construir software limpio y con propósito. Convirtiendo ideas en productos reales.",
     "viewWork": "Ver Mi Trabajo",
-    "readCV": "Leer CV",
+    "aboutMe": "Sobre Mí",
     "stat1Value": "UCR",
     "stat1Label": "Graduada",
     "stat2Value": "EN - ES",
@@ -24,8 +25,21 @@
     "stat3Label": "Tecnologías"
   },
   "about": {
-    "academicTitle": "Formación",
-    "academicTitle2": "Académica",
+    "eyebrow": "Sobre Mí",
+    "title": "Un poco",
+    "titleHighlight": "sobre mí.",
+    "narrative": [
+      "Soy graduada en Computación de la Universidad de Costa Rica y me gusta construir software que la gente realmente use. Parte de lo que sé viene de sacar proyectos reales de principio a fin, no solo de los cursos.",
+      "Empecé con soporte técnico y reparaciones, seguí con herramientas internas para una diferentes proyectos, y eso se convirtió en productos en línea que diseñé, construí y desplegué yo misma.",
+      "Me importa la estructura limpia, el código legible y las interfaces que se sienten obvias de usar. Ahora busco un equipo donde pueda seguir aprendiendo y aportar desde el primer día."
+    ],
+    "facts": [
+      { "label": "Ubicación", "value": "Heredia, Costa Rica" },
+      { "label": "Idiomas", "value": "Español nativo · Inglés B2+" },
+      { "label": "Enfoque", "value": "Desarrollo web full-stack" },
+      { "label": "Disponibilidad", "value": "Abierta a oportunidades" }
+    ],
+    "educationLabel": "Formación Académica",
     "degreeTitle": "Bach. en Computación",
     "university": "Universidad de Costa Rica",
     "degreeYear": "2025",
@@ -35,27 +49,33 @@
     "portraitAlt": "Isabela Rodríguez Rocha"
   },
   "experience": {
+    "eyebrow": "Trayectoria",
     "sectionTitle": "Experiencia Profesional",
     "items": [
       {
+        "period": "2024",
         "title": "Práctica Profesional Supervisada",
         "company": "UCR - Aldeas SOS",
         "description": "Colaboré con un equipo para construir herramientas de software internas para una organización sin fines de lucro, mejorando la gestión de datos y optimizando las operaciones diarias. Adquirí experiencia práctica en desarrollo full-stack, metodologías ágiles y entrega de soluciones alineadas con las necesidades reales del usuario."
       },
       {
+        "period": "2020 — Actualidad",
         "title": "Técnica en Computación",
         "company": "Consultoría Independiente",
         "description": "Brindé soporte técnico a personas y pequeñas empresas, gestionando reparaciones de hardware, instalación de software y configuración de redes. Extendí este trabajo al desarrollo web construyendo y desplegando IsaStore CR, mi propia plataforma de comercio electrónico en línea. Desarrollé sólidas habilidades de diagnóstico y la capacidad de explicar conceptos técnicos en un lenguaje accesible."
       },
       {
+        "period": "2019 — 2020",
         "title": "Diseñadora CAD",
         "company": "Align Technology",
         "description": "Diseñé planes de tratamiento dental personalizados utilizando software CAD especializado, creando modelos 3D precisos para guiar el cuidado ortodóntico. Fortalecí mi atención al detalle, razonamiento espacial y capacidad de entregar trabajo de alta calidad en plazos ajustados."
       }
-    ],
-    "projectsTitle": "Proyectos Destacados",
-    "projectsSubtitle": "En Línea y Desplegados",
-    "projects": [
+    ]
+  },
+  "projects": {
+    "eyebrow": "En Línea y Desplegados",
+    "title": "Proyectos Destacados",
+    "items": [
       {
         "title": "IsaStore CR",
         "description": "Plataforma de comercio electrónico para electrónica y accesorios con catálogo de productos, carrito de compras y proceso de pago fluido — construida y desplegada de principio a fin.",
@@ -70,6 +90,7 @@
     "visitProject": "Visitar Proyecto"
   },
   "skills": {
+    "eyebrow": "Con Lo Que Trabajo",
     "title": "Habilidades",
     "titleHighlight": "Técnicas.",
     "devEcosystem": "Ecosistema de Desarrollo",
@@ -87,12 +108,21 @@
     "techSupport": "Soporte Técnico",
     "techSupportDesc": "Experiencia práctica diagnosticando y resolviendo problemas de hardware y software. Habilidad en mantenimiento de sistemas, configuración de redes y resolución de problemas técnicos para mantener las operaciones funcionando sin interrupciones.",
     "languages": "Idiomas",
-    "spanish": "Español",
-    "nativeProficiency": "Competencia Nativa",
-    "english": "Inglés",
-    "intermediateB2": "Intermedio B2+"
+    "languageList": [
+      {
+        "name": "Español",
+        "level": "Nativo",
+        "note": "Lengua materna"
+      },
+      {
+        "name": "Inglés",
+        "level": "B2+",
+        "note": "Competencia profesional de trabajo"
+      }
+    ]
   },
   "contact": {
+    "eyebrow": "Contáctame",
     "heading": "Iniciemos una",
     "headingHighlight": "conversación.",
     "portfolioIdentity": "Identidad del Portafolio",
